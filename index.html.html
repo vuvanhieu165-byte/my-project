@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Món Ăn Đường Phố Tôi Thích - Trang của Hiếu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1612;
+            --paper: #f7f4ef;
+            --muted: #8a8178;
+            --accent: #b85c2a;
+            --rule: #ddd8d0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--paper);
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+        }
+
+        /* HEADER */
+        header {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 5rem 2rem 3rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 1.25rem;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        header h1 em {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 460px;
+        }
+
+        /* MAIN */
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* PHẦN 1 - DANH SÁCH + ẢNH MỖI MÓN */
+        .section-list {
+            padding: 3.5rem 0 3rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .section-list h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.75rem;
+        }
+
+        .food-list {
+            list-style: none;
+        }
+
+        .food-list li {
+            display: grid;
+            grid-template-columns: 2rem 1fr 180px;
+            gap: 1.25rem;
+            align-items: start;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .food-list li:last-child {
+            border-bottom: none;
+        }
+
+        .food-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--rule);
+            flex-shrink: 0;
+            line-height: 1.2;
+        }
+
+        .food-content strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 0.4rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .food-content span {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .food-img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            display: block;
+            filter: sepia(10%) contrast(1.02);
+        }
+
+        /* PHẦN 2 - LIÊN KẾT */
+        .section-link {
+            padding: 3.5rem 0 3rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .section-link h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .section-link p {
+            font-size: 0.93rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-link a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 1px;
+        }
+
+        .section-link a:hover {
+            color: var(--ink);
+        }
+
+        /* GALLERY GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Ảnh chẵn lẻ có viền khác nhau */
+        .gallery-item:nth-child(even) .gallery-img {
+            border: 3px solid var(--accent);
+        }
+
+        .gallery-item:nth-child(odd) .gallery-img {
+            border: 3px solid var(--rule);
+        }
+
+        .gallery-caption {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
+        .gallery-note {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f0ede7;
+            border-radius: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 520px) {
+            header h1 { font-size: 2rem; }
+            .food-list li {
+                grid-template-columns: 2rem 1fr;
+            }
+            .food-img {
+                display: none;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p class="eyebrow">Trang cá nhân · Dự án HTML5</p>
+        <h1>Những món ăn đường phố<br>tôi <em>không thể quên</em></h1>
+        <p>Xin chào, tôi là <strong>Hiếu</strong>. Đây là 3 món ăn vỉa hè tôi hay ăn nhất — không phải nhà hàng sang trọng, chỉ là những gánh hàng quen thuộc mỗi sáng.</p>
+    </header>
+
+    <main>
+
+        <!-- Phần 1: Danh sách 3 món + ảnh riêng từng món -->
+        <section class="section-list">
+            <p class="section-label">Phần 01 · Top 3 món ruột</p>
+            <h2>📋 Ba món gắn bó với tôi nhất</h2>
+            <ul class="food-list">
+                <li>
+                    <div class="food-num">01</div>
+                    <div class="food-content">
+                        <strong>Bánh mì Sài Gòn</strong>
+                        <span>Ổ bánh giòn tan, pate béo, thịt nguội, rau thơm và tương ớt — sáng nào cũng không thể cưỡng lại.</span>
+                    </div>
+                    <img class="food-img" src="https://picsum.photos/id/431/180/110" alt="Bánh mì Sài Gòn">
+                </li>
+                <li>
+                    <div class="food-num">02</div>
+                    <div class="food-content">
+                        <strong>Bún bò Huế</strong>
+                        <span>Nước dùng đậm đà sả ớt, miếng bò bắp và chả Huế. Nhớ quán cô Ba góc chợ Bến Thành.</span>
+                    </div>
+                    <img class="food-img" src="https://picsum.photos/id/292/180/110" alt="Bún bò Huế">
+                </li>
+                <li>
+                    <div class="food-num">03</div>
+                    <div class="food-content">
+                        <strong>Phở bò Hà Nội</strong>
+                        <span>Hương thơm quế hồi, nước trong ngọt, thịt tái chín và hành lá. Món tôi tìm kiếm mỗi lần ra Bắc.</span>
+                    </div>
+                    <img class="food-img" src="https://picsum.photos/id/127/180/110" alt="Phở bò Hà Nội">
+                </li>
+            </ul>
+        </section>
+
+        <!-- Phần Gallery: 5 ảnh bộ sưu tập -->
+        <section class="section-list">
+            <p class="section-label">Phần 02 · Bộ sưu tập ảnh</p>
+            <h2>📸 <em>5 món</em> đường phố Việt Nam</h2>
+            <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Những gánh hàng rong, những hương vị bình dị mà tôi đã chụp lại trong 2 năm qua.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/431/400/300" alt="Bánh mì Sài Gòn nóng giòn" class="gallery-img">
+                    <p class="gallery-caption">🥖 Bánh mì Sài Gòn</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/292/400/300" alt="Bún bò Huế đặc biệt" class="gallery-img">
+                    <p class="gallery-caption">🍜 Bún bò Huế</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/493/400/300" alt="Chè đậu đỏ bánh lọt" class="gallery-img">
+                    <p class="gallery-caption">🥤 Chè đậu đỏ</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/127/400/300" alt="Phở bò Hà Nội" class="gallery-img">
+                    <p class="gallery-caption">🍲 Phở bò Hà Nội</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/128/400/300" alt="Xôi xéo đỗ xanh" class="gallery-img">
+                    <p class="gallery-caption">🍚 Xôi xéo</p>
+                </div>
+            </div>
+
+            <p class="gallery-note">✨ Mỗi bức ảnh là một câu chuyện — hover vào để xem hiệu ứng, và để ý ảnh chẵn/lẻ có viền khác nhau nhờ nth-child!</p>
+        </section>
+
+        <!-- Phần 3: Liên kết -->
+        <section class="section-link">
+            <p class="section-label">Phần 03 · Khám phá thêm</p>
+            <h2>🌏 Ẩm thực đường phố thế giới</h2>
+            <p>Nếu bạn muốn tìm hiểu thêm về văn hóa ăn vặt Việt Nam, kênh YouTube tôi hay xem là
+                <a href="https://www.youtube.com/@markwiens" target="_blank">Mark Wiens</a> —
+                anh ấy đã đi khắp Việt Nam và quay lại rất nhiều món vỉa hè chân thực.
+            </p>
+            <p><em style="font-size:0.85rem; color:#a09890;">Lưu ý: đây là gợi ý cá nhân, không phải quảng cáo.</em></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>📧 hieu[at]example.com</p>
+        <p>© 2026 Hiếu's Food Journal</p>
+    </footer>
+
+</body>
+</html>
